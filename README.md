@@ -1,16 +1,100 @@
-# React + Vite
+# 🔐 PassOP – Password Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PassOP is a **full-stack password manager** that allows users to securely store, manage, and access their credentials in one place.
+It provides a simple and responsive interface for saving, editing, copying, and deleting passwords.
 
-Currently, two official plugins are available:
+This project is built using **React, Node.js, Express, and MongoDB**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* ➕ Add new passwords
+* ✏️ Edit existing credentials
+* 🗑️ Delete saved passwords
+* 📋 Copy passwords instantly
+* 👁️ Show / hide password functionality
+* ⚡ Fast and responsive UI
+* 🔔 Toast notifications for actions
+* 🗄️ Data stored securely in MongoDB
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* tailwindcss
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB
+
+---
+
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+git clone https://github.com/aryan-r-a-j/passop-password-manager.git
+
+cd passop-password-manager
+
+---
+
+### 2️⃣ Backend Setup
+
+cd backend
+
+npm install
+
+node server.js
+
+---
+
+### 3️⃣ Frontend Setup
+
+cd frontend
+
+npm install
+
+npm run dev
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file inside the **backend** folder and add:
+
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+
+---
+
+## 🚀 Future Improvements
+
+* User authentication
+* Password encryption
+* Search functionality
+* Dark mode
+* Deploy to cloud
+
+---
+
+## 👨‍💻 Author
+
+**Aryan Raj**
+
+GitHub:
+https://github.com/aryan-r-a-j
+
+---
+
