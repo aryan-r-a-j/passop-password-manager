@@ -18,8 +18,11 @@ const dbName = 'passop';
 const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
 app.use(cors({
-  origin: "https://passop-password-manager-frontend.onrender.com"
+  origin: "https://passop-password-manager-frontend.onrender.com",
+  methods: ["GET","POST","DELETE","PUT"],
+  allowedHeaders: ["Content-Type"]
 }))
+
 
 client.connect();
 
