@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { v4 as uuidv4 } from 'uuid';
-
+const API_URL = import.meta.env.VITE_API_URL;
+console.log(API_URL)
 
 const Manager = () => {
     const ref = useRef()
@@ -14,7 +15,7 @@ const Manager = () => {
     const [passwordArray, setPasswordArray] = useState([])
 
     const getPassword = async() => {
-      let req= await fetch("http://localhost:3000/")
+      let req= await fetch(`${API_URL}/`)
       let passwords = await req.json()
       console.log(passwords)
       setPasswordArray(passwords)         
@@ -46,10 +47,10 @@ const Manager = () => {
 
     //  id any such id exist in db delete it
        if(form.id){
-                await fetch("http://localhost:3000/",{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:id})})
+                await fetch(`${API_URL}/`,{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:id})})
        }
 
-        await fetch("http://localhost:3000/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...form,id:id})})
+        await fetch(`${API_URL}/`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...form,id:id})})
 
         const newArray = [...passwordArray.filter(item=>item.id!==id), { ...form, id: id }];
         setPasswordArray(newArray);
@@ -99,7 +100,7 @@ const Manager = () => {
 
             const newArray = passwordArray.filter(item => item.id != id)
             setPasswordArray(newArray)
-            let res=await fetch("http://localhost:3000/",{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({id})})
+            let res=await fetch(`${API_URL}/`,{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({id})})
       //      localStorage.setItem("passwords", JSON.stringify(newArray))
                toast('Password Deleted! ', {
             position: "top-right",
