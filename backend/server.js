@@ -17,7 +17,9 @@ app.use(express.json())
 const dbName = 'passop';
 const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+  origin: "https://passop-password-manager-frontend.onrender.com"
+}))
 
 client.connect();
 
