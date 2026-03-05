@@ -8,8 +8,7 @@ const cors=require('cors')
 dotenv.config()
 
 // Connection URL
-const url = 'mongodb://localhost:27017';
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.MONGO_URI);
 
 // Database Name
 const app = express()
